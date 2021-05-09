@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-type-tab',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./type-tab.component.sass']
 })
 export class TypeTabComponent implements OnInit {
-
+  @Input() type: string;
+  @Input() active: boolean;
   constructor() { }
 
   ngOnInit(): void {
