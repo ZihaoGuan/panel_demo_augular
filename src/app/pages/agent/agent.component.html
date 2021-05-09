@@ -1,0 +1,57 @@
+<div>
+    <div class="box-container">
+        <div class="box orange-bg box-status box-building">
+            <span class="title">Building</span>
+            <span class="number">
+                {{ 1 }}
+            </span>
+        </div>
+        <div class="box green-bg box-status box-idle">
+            <span class="title">Idle</span>
+            <span class="number">
+                {{ 1 }}
+            </span>
+        </div>
+        <div class="box white-bg box-flex text-center">
+            <div class="box-column">
+                <span class="title">All</span>
+                <span class="number">
+                    {{ 1}}
+                </span>
+            </div>
+            <div class="box-column">
+                <span class="title">PHYSICAL</span>
+                <span class="number">
+                    {{ 1 }}
+                </span>
+            </div>
+            <div class="box-column">
+                <span class="title">VIRTUAL</span>
+                <span class="number">
+                    {{ 1 }}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="control-bar">
+        <app-type-tab>
+        </app-type-tab>
+        <app-type-tab>
+        </app-type-tab>
+        <app-type-tab>
+        </app-type-tab>
+        <div class="search-box-container">
+            <i class="icomoon icon-search i-20"></i>
+            <input class="search-box" />
+        </div>
+        <div class="layout-tab leftmost">
+            <i class="icomoon icon-th-card btn"></i>
+        </div>
+        <div class="layout-tab rightmost active">
+            <i class="icomoon icon-th-list btn"></i>
+        </div>
+    </div>
+    <div class="item-agents">
+        <!-- <AgentItem v-for="agent in getAgentsByType(tab)" :key="agent.id" :agent="agent"></AgentItem> -->
+    </div>
+</div>
