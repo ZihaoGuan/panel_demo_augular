@@ -1,0 +1,36 @@
+<div class="item white-bg">
+    <!-- <OsIcon :os="agent.os" /> -->
+    <div class="column">
+        <div class="row row-1">
+            <div class="name light-cyan-text">
+                <i class="icomoon icon-desktop i-16"></i>
+                {{ '' }}
+            </div>
+            <div :class="agent.status" class="status white-text">
+                {{'' }}
+            </div>
+            <div class="ip">
+                <i class="icomoon icon-info i-16"></i>
+                {{ '' }}
+            </div>
+            <div class="location">
+                <i class="icomoon icon-folder i-16"></i>
+                {{ '' }}
+            </div>
+        </div>
+        <div class="row row-2">
+            <div class="btn-square btn-add popup btn-blue">
+                <i class="icomoon icon-plus i-16 btn"></i>
+                <!-- <PopupDialog :show="agent.id == agentShowPopUp" :id="agent.id" /> -->
+            </div>
+            <div class="btn-square btn-delete">
+                {{ '' }}
+                <i class="icomoon icon-trash i-16 btn" ></i>
+            </div>
+            <div class="btn-square rightmost btn-blue btn">
+                <i class="icomoon icon-deny white-text"></i>
+                Deny
+            </div>
+        </div>
+    </div>
+</div>
