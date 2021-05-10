@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { AgentItemComponent } from './pages/agent/components/agent-item/agent-item.component';
@@ -13,6 +14,7 @@ import { HelpComponent } from './pages/help/help.component';
 import { TypeTabComponent } from './pages/agent/components/type-tab/type-tab.component';
 import { OsIconComponent } from './pages/agent/components/os-icon/os-icon.component';
 import { PopupDialogComponent } from './pages/agent/components/popup-dialog/popup-dialog.component';
+import { fromEventPattern } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { PopupDialogComponent } from './pages/agent/components/popup-dialog/popu
     PopupDialogComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
