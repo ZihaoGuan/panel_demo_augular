@@ -20,4 +20,17 @@ export class AgentComponent implements OnInit {
   selectTypeTab(type: string) {
     this.tab = type;
   }
+
+  deleteResource(id: number, resource: string) {
+    console.log(id)
+    console.log(resource)
+    const jsonToUpdate: Agent = this.agents.find(agent => agent.id == id)
+    if (jsonToUpdate) {
+      const copy: Agent = JSON.parse(JSON.stringify(jsonToUpdate))
+      copy['resources'] = copy['resources'].filter(
+        (e: string) => e !== resource
+      )
+      this.agentService.deleteResource(id, copy).subscribe((agent) => { jsonToUpdate['resources'] = agent['resources'] });
+    }
+  }
 }

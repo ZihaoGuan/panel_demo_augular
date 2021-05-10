@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Agent } from '../../Agent';
 @Component({
   selector: 'app-agent-item',
@@ -7,9 +7,14 @@ import { Agent } from '../../Agent';
 })
 export class AgentItemComponent implements OnInit {
   @Input() agent: Agent;
+  @Output() onDeleteResource: EventEmitter<string> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(resource: string) {
+    this.onDeleteResource.emit(resource)
   }
 
 }

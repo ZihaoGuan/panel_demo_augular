@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Agent } from '../Agent';
-import { AGENTS } from '../mock-agents';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,10 @@ export class AgentService {
   constructor(private http: HttpClient) { }
 
   getAgents(): Observable<Agent[]> {
-    
     return this.http.get<Agent[]>(`${this.apiUrl}agents`);
+  }
+
+  deleteResource(id: number, agent: Agent): Observable<Agent> {
+    return this.http.put<Agent>(`${this.apiUrl}agents/${id}`, agent)
   }
 }

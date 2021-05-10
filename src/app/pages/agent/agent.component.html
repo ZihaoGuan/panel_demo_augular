@@ -52,6 +52,6 @@
         </div>
     </div>
     <div class="item-agents">
-        <app-agent-item *ngFor="let agent of agents" [agent]="agent"></app-agent-item>
+        <app-agent-item *ngFor="let agent of agents" [agent]="agent" (onDeleteResource)="deleteResource(agent.id,$event)"></app-agent-item>
     </div>
 </div>

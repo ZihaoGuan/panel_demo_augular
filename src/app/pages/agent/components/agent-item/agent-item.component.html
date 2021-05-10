@@ -25,7 +25,7 @@
             </div>
             <div *ngFor="let resource of agent.resources" class="btn-square btn-delete">
                 {{ resource }}
-                <i class="icomoon icon-trash i-16 btn"></i>
+                <i class="icomoon icon-trash i-16 btn" (click)="onDelete(resource)"></i>
             </div>
             <div *ngIf="agent.status==='building'" class="btn-square rightmost btn-blue btn">
                 <i class="icomoon icon-deny white-text"></i>
