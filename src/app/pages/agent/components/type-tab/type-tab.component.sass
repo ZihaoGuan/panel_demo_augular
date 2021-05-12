@@ -15,6 +15,9 @@
     border-bottom: 3px solid $light-cyan-color
 
 @media only screen and (max-width: $tablet-size)
-  .type-tab
+  :host
     flex-grow: 1
+    flex-basis: 0
     background: white
+    .type-tab
+      width:100%

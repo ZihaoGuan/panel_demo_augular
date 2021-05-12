@@ -1,1 +1,19 @@
-<p>popup-dialog works!</p>
+<div class="popup-window white-bg">
+    <div class="btn-close btn" (click)="closePopup()">
+        <i class="icomoon icon-close"></i>
+    </div>
+    <div class="row">
+        <p>Seperate multiple resource name with commas</p>
+    </div>
+    <div class="row">
+        <input type="text" placeholder="Input Value" />
+    </div>
+    <div class="row">
+        <div class="btn-square btn btn-blue btn-add-resources" (click)="addResources()">
+            Add Resources
+        </div>
+        <div class="btn-square btn btn-gray btn-cancel" (click)="closePopup()">
+            Cancel
+        </div>
+    </div>
+</div>

@@ -8,7 +8,7 @@ import { Agent } from './Agent';
   styleUrls: ['./agent.component.sass', '../../../assets/font-icons/fonts.css']
 })
 export class AgentComponent implements OnInit {
-  tab: string = 'All'
+  tab: string = 'all'
   agents: Agent[] = [];
 
   constructor(private agentService: AgentService) { }
@@ -19,6 +19,38 @@ export class AgentComponent implements OnInit {
   }
   selectTypeTab(type: string) {
     this.tab = type;
+  }
+
+  getAgentsByType() {
+    if (this.tab === "all") return this.agents
+    return this.agents.filter((agent: Agent) => agent.type === this.tab)
+  }
+
+  getAgentCount() {
+    if (this.agents.length == 0) return
+    return this.agents.length
+  }
+  getAgentCountByStatus(status: string) {
+    if (this.agents.length == 0) return
+    const count = this.agents.reduce((acc, cur) => {
+      if (cur.status === status) {
+        return ++acc
+      } else {
+        return acc
+      }
+    }, 0)
+    return count
+  }
+  getAgentCountByType(type: string) {
+    if (this.agents.length == 0) return
+    const count = this.agents.reduce((acc, cur) => {
+      if (cur.type === type) {
+        return ++acc
+      } else {
+        return acc
+      }
+    }, 0)
+    return count
   }
 
   deleteResource(id: number, resource: string) {

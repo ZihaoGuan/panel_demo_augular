@@ -3,42 +3,42 @@
         <div class="box orange-bg box-status box-building">
             <span class="title">Building</span>
             <span class="number">
-                {{ 1 }}
+                {{ getAgentCountByStatus('building') }}
             </span>
         </div>
         <div class="box green-bg box-status box-idle">
             <span class="title">Idle</span>
             <span class="number">
-                {{ 1 }}
+                {{ getAgentCountByStatus('idle') }}
             </span>
         </div>
         <div class="box white-bg box-flex text-center">
             <div class="box-column">
                 <span class="title">All</span>
                 <span class="number">
-                    {{ 1}}
+                    {{ getAgentCount()}}
                 </span>
             </div>
             <div class="box-column">
                 <span class="title">PHYSICAL</span>
                 <span class="number">
-                    {{ 1 }}
+                    {{ getAgentCountByType('physical') }}
                 </span>
             </div>
             <div class="box-column">
                 <span class="title">VIRTUAL</span>
                 <span class="number">
-                    {{ 1 }}
+                    {{ getAgentCountByType('virtual') }}
                 </span>
             </div>
         </div>
     </div>
     <div class="control-bar">
-        <app-type-tab type="All" [active]="tab==='All'" (btnClick)="selectTypeTab('All')">
+        <app-type-tab type="All" [active]="tab==='all'" (btnClick)="selectTypeTab('all')">
         </app-type-tab>
-        <app-type-tab type="Physical" [active]="tab==='Physical'" (btnClick)="selectTypeTab('Physical')">
+        <app-type-tab type="Physical" [active]="tab==='physical'" (btnClick)="selectTypeTab('physical')">
         </app-type-tab>
-        <app-type-tab type="Virtual" [active]="tab==='Virtual'" (btnClick)="selectTypeTab('Virtual')">
+        <app-type-tab type="Virtual" [active]="tab==='virtual'" (btnClick)="selectTypeTab('virtual')">
         </app-type-tab>
         <div class="search-box-container">
             <i class="icomoon icon-search i-20"></i>
@@ -52,6 +52,6 @@
         </div>
     </div>
     <div class="item-agents">
-        <app-agent-item *ngFor="let agent of agents" [agent]="agent" (onDeleteResource)="deleteResource(agent.id,$event)"></app-agent-item>
+        <app-agent-item *ngFor="let agent of getAgentsByType()" [agent]="agent" (onDeleteResource)="deleteResource(agent.id,$event)"></app-agent-item>
     </div>
 </div>
